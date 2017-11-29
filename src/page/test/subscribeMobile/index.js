@@ -137,7 +137,6 @@
               hls: hlsConfig
       })
       .then(function (subscriberImpl) {
-        streamTitle.innerText = configuration.stream1;
         targetSubscriber = subscriberImpl
         // Subscribe to events.
         targetSubscriber.on('*', onSubscriberEvent);

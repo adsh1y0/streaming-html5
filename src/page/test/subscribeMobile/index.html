@@ -4,12 +4,34 @@
     {{> meta title='Subscriber Test'}}
     {{> header-scripts}}
     {{> header-stylesheets}}
+    <style>
+      body, html, div.app {
+        height: 100%
+      }
+      body, div.app {
+        overflow:hidden;
+        overflow-y: auto;
+      }
+      video {
+        transform: rotate(0deg);
+        width: 100%;
+        display: block;
+        position: absolute;
+        object-fit: cover !important;
+        transform-origin: 0 0;
+      }
+      #el-container {
+        width: 100%;
+        height: 320px;
+        overflow: hidden;
+        display: block;
+      }
+    </style>
   </head>
   <body>
-    <div id="app">  
+    <div id="app">
         {{> status-field-subscriber}}
-        {{> test-info testTitle='Subscriber Mobile Optimized Test'}}
-      <div class="centered">
+      <div id="el-container" class="centered">
         <video id="red5pro-subscriber"
                 controls="controls" autoplay="autoplay" playsinline
                 class="red5pro-media red5pro-media-background"
