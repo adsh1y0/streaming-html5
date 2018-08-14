@@ -1,6 +1,6 @@
 {
   "name": "red5pro-html-sdk-testbed",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "Testbed examples for Red5 Pro HTML SDK",
   "main": "src/js/index.js",
   "repository": {
@@ -34,6 +34,11 @@
     "build": "NODE_ENV=develop gulp build",
     "predist": "npm run clean:dist",
     "dist": "gulp bump-version && NODE_ENV=production gulp build",
-    "dist:webapp": "NODE_ENV=production gulp build:webapp"
+    "dist:webapp": "NODE_ENV=production gulp build:webapp",
+    "clean:win-build": "del /S /Q build",
+    "clean:win-dist": "del /S /Q dist",
+    "win-build": "set NODE_ENV=develop && gulp build",
+    "win-dist": "gulp bump-version && set NODE_ENV=production && gulp build",
+    "win-dist:webapp": "set NODE_ENV=production && gulp build:webapp"
   }
 }
