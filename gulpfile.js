@@ -3,6 +3,7 @@ var path = require('path');
 var gulp = require('gulp');
 var bump = require('gulp-bump');
 var handlebars = require('gulp-compile-handlebars');
+var webserver = require('gulp-webserver')
 var mkdir = require('mkdirp');
 
 var pkg = path.join(__dirname, 'package.json');
@@ -66,4 +67,13 @@ gulp.task('bump-version', function() {
         type: versionType
       }))
       .pipe(gulp.dest(__dirname));
+});
+
+gulp.task('webserver', function () {
+    gulp.src('dist-webapp')
+        .pipe(webserver({
+            host: 'localhost',
+            port: 8000,
+            livereload: true
+        }));
 });

@@ -25,7 +25,8 @@
     "gulp": "^3.9.1",
     "gulp-bump": "^2.4.0",
     "gulp-compile-handlebars": "^0.6.1",
-    "gulp-rename": "^1.2.2"
+    "gulp-rename": "^1.2.2",
+    "gulp-webserver": "^0.9.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -39,6 +40,7 @@
     "clean:win-dist": "del /S /Q dist",
     "win-build": "set NODE_ENV=develop && gulp build",
     "win-dist": "gulp bump-version && set NODE_ENV=production && gulp build",
-    "win-dist:webapp": "set NODE_ENV=production && gulp build:webapp"
+    "win-dist:webapp": "set NODE_ENV=production && gulp build:webapp",
+    "webserver": "gulp webserver"
   }
 }
